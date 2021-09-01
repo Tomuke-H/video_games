@@ -7,6 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
  require 'faker'
 
+ Game.destroy_all
+ 
  10.times do |g|
     Game.create(
         name: Faker::Game.title,
