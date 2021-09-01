@@ -42,6 +42,18 @@ const App =() => {
         }
     }
 
+    const updateGame = async (game) => {
+        console.log(game)
+        try {
+            let res = await axios.put(`/games/${game.id}`, game)
+            console.log(res.data)
+            setGames(games.map((g) => g.id === res.data.id ? res.data : g))
+        }catch (err){
+            console.log(err)
+            alert("puts broke")
+        }
+    }
+
     return (
         <div>
             <h1>APP HERE</h1>
@@ -49,7 +61,7 @@ const App =() => {
             <br />
             <button onClick={() => (setShowForm(!showForm))}>{showForm ? "Hide" : "Add New Game"}</button>
             {showForm && <GameForm createGame={createGame}/>}
-            {showGames && <Games games={games} deleteGame={deleteGame}/>}
+            {showGames && <Games games={games} deleteGame={deleteGame} updateGame={updateGame}/>}
         </div>
     )
 }
