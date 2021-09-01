@@ -14,12 +14,20 @@ const App =() => {
 
     const createGame = async (game) => {
         try {
-            console.log(game)
             let res = await axios.post('/games', game)
-            console.log(res.data)
             setGames([res.data, ...games])
         }catch (err){
             alert('post broke')
+        }
+    }
+
+    const deleteGame = async (id) => {
+        try {
+            console.log(id)
+            await axios.delete(`/games/${id}`)
+            setGames(games.filter((i) => i.id !== id))
+        }catch (err){
+            alert('delete broke')
         }
     }
 
@@ -41,7 +49,7 @@ const App =() => {
             <br />
             <button onClick={() => (setShowForm(!showForm))}>{showForm ? "Hide" : "Add New Game"}</button>
             {showForm && <GameForm createGame={createGame}/>}
-            {showGames && <Games games={games}/>}
+            {showGames && <Games games={games} deleteGame={deleteGame}/>}
         </div>
     )
 }
