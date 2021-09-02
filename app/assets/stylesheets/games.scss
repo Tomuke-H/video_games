@@ -1,3 +1,126 @@
 // Place all the styles related to the games controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+body {
+    background:#1A1A1D;
+    color: white;
+    margin: 0px;
+}
+
+.wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0px;
+    padding: 0px;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #116466;
+    width: 100%;
+    height: 80px;
+    color: #FFCB9A;
+    margin: 0px;
+}
+
+.main {
+    display: flex;
+    flex-direction: row;
+    width: 800px;
+}
+
+.main__column {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    margin: 25px;
+    overflow: hidden;
+}
+
+.column__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.game {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    border: solid 2px #4E4E50;
+    animation-name: slidein;
+    animation-duration: 1s;
+}
+
+@keyframes slidein {
+    from {
+        margin-top: 100%;
+        opacity: 0%;
+        background-color: white;
+    }
+    
+    25% {
+        background-color: white;
+    }
+
+    to {
+        margin-top: 20px;
+        opacity: 100%;
+        background-color: #1A1A1D;
+    }
+}
+
+.game p {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.game__button {
+    margin-left: 0px;
+    margin-right: 0px;
+    display: inline-block;
+    width: 150px;
+    height: 25px;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    background-color: #4E4E50;
+    color: white;
+    transition: 250ms;
+}
+
+.game__button:hover {
+    background-color: #d1e8e2;
+    color: black;
+}
+
+.game__buttons {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+}
+
+.game-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+

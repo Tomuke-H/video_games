@@ -19,7 +19,7 @@ const GameForm = ({ game, createGame, updateGame, setEditForm }) => {
     }
 
     return (
-        <div>
+        <div className="game-form">
             <h1>{game ? "Update Game" : "New Game"}</h1>
             <form onSubmit={handleSubmit}>
                 <p>Title</p>

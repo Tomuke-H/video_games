@@ -11,8 +11,7 @@ const Games = ({ games, deleteGame, updateGame }) => {
     }
 
     return (
-        <div>
-            <h1>Game List</h1>
+        <div className="column__list">
             {renderGames()}
         </div>
     )

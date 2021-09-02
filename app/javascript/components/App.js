@@ -55,13 +55,18 @@ const App =() => {
     }
 
     return (
-        <div>
-            <h1>APP HERE</h1>
-            <button onClick={() => (setShowGames(!showGames))}>{showGames ? "Hide Games" : "Show All Games"}</button>
-            <br />
-            <button onClick={() => (setShowForm(!showForm))}>{showForm ? "Hide" : "Add New Game"}</button>
-            {showForm && <GameForm createGame={createGame}/>}
-            {showGames && <Games games={games} deleteGame={deleteGame} updateGame={updateGame}/>}
+        <div className="wrapper">
+            <h1 className="title">Tom's Video Game App</h1>
+            <div className="main">
+                <div className="main__column">
+                    <button onClick={() => (setShowGames(!showGames))}>{showGames ? "Hide Games" : "Show All Games"}</button>
+                    {showGames && <Games games={games} deleteGame={deleteGame} updateGame={updateGame}/>}
+                </div>
+                <div className="main__column">
+                    <button onClick={() => (setShowForm(!showForm))}>{showForm ? "Hide" : "Add New Game"}</button>
+                    {showForm && <GameForm createGame={createGame}/>}
+                </div>
+            </div>
         </div>
     )
 }
