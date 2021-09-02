@@ -14,7 +14,7 @@ class GamesController < ApplicationController
         if(@game.save)
             render json: @game
         else
-            render json: {error: game.error}, status: :unprocessable_entity
+            render json: {error: @game.errors}, status: :unprocessable_entity
         end
     end
 
@@ -22,6 +22,8 @@ class GamesController < ApplicationController
         @game = Game.find(params[:id])
         if(@game.update(games_params))
             render json: @game
+        else
+            render json: {error: @game.errors}, status: :unprocessable_entity
         end
     end
 

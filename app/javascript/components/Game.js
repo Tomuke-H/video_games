@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import GameForm from './GameForm';
 
-const Game = ({ game, deleteGame, updateGame }) => {
+const Game = ({ game, deleteGame, updateGame, errors }) => {
     const [editForm, setEditForm] = useState(false);
 
     return (
@@ -15,7 +15,7 @@ const Game = ({ game, deleteGame, updateGame }) => {
                     <button className="game__button" onClick={() => setEditForm(!editForm)}>{editForm ? "Hide" : "Edit Game"}</button>
                 </div>
             </div>
-            {editForm && <GameForm game={game} updateGame={updateGame} setEditForm={setEditForm}/>}
+            {editForm && <GameForm errors={errors} game={game} updateGame={updateGame} setEditForm={setEditForm}/>}
         </div>
     )
 }

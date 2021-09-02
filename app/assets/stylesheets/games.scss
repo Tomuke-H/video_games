@@ -15,6 +15,7 @@ body {
     align-items: center;
     margin: 0px;
     padding: 0px;
+    margin-bottom: 400px;
 }
 
 .title {
@@ -35,6 +36,25 @@ body {
     width: 800px;
 }
 
+.main__button {
+    margin-left: 0px;
+    margin-right: 0px;
+    display: inline-block;
+    width: 300px;
+    height: 50px;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    background-color: #4E4E50;
+    color: white;
+    transition: 250ms;
+}
+
+.main__button:hover {
+    background-color: #d1e8e2;
+    color: black;
+}
+
 .main__column {
     display: flex;
     flex-direction: column;
@@ -52,7 +72,6 @@ body {
 
 .game {
     width: 300px;
-    // height: 160px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -121,13 +140,12 @@ body {
     height: 160px;
     width: 300px;
     border: solid 2px #4E4E50;
-    animation-name: slidedown;
+    animation-name: fadein;
     animation-duration: 1s;
 }
 
-@keyframes slidedown {
+@keyframes fadein {
     from {
-        margin-bottom: 100%;
         opacity: 0%;
         background-color: white;
     }
@@ -137,7 +155,6 @@ body {
     }
 
     to {
-        margin-bottom: 0px;
         opacity: 100%;
         background-color: #1A1A1D;
     }
@@ -195,4 +212,34 @@ form button {
 form button:hover {
     background-color: #d1e8e2;
     color: black;
+}
+
+.error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    margin-top: 20px;
+    border: solid 2px #C3073F;
+    background-color: #4E4E50;
+    animation-name: errorin;
+    animation-duration: 1.5s;
+}
+
+@keyframes errorin {
+    from {
+        opacity: 0%;
+        background-color: #C3073F;
+        color:#C3073F;
+    }
+    
+    25% {
+        background-color: #C3073F;
+        color: #C3073F;
+    }
+
+    to {
+        opacity: 100%;
+        background-color: #4E4E50;
+    }
 }
