@@ -5,8 +5,8 @@ import GameForm from './GameForm';
 
 const App =() => {
     const [games, setGames] = useState([])
-    const [showGames, setShowGames] = useState(false)
-    const [showForm, setShowForm] = useState(false)
+    const [showGames, setShowGames] = useState(true)
+    const [showForm, setShowForm] = useState(true)
 
     useEffect(() => {
         getGames();

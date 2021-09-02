@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 
 const GameForm = ({ game, createGame, updateGame, setEditForm }) => {
-    const [name, setName] = useState(game ? game.name : '')
-    const [genre, setGenre] = useState(game ? game.genre : '')
-    const [platform, setPlatform] = useState(game ? game.platform : '')
+    const [name, setName] = useState(game ? game.name : 'Title')
+    const [genre, setGenre] = useState(game ? game.genre : 'Genre')
+    const [platform, setPlatform] = useState(game ? game.platform : 'Platform')
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -12,22 +12,30 @@ const GameForm = ({ game, createGame, updateGame, setEditForm }) => {
             setEditForm(false)
         } else {
             createGame({name, genre, platform})
-            setName('')
-            setGenre('')
-            setPlatform('')
+            setName('Title')
+            setGenre('Genre')
+            setPlatform('Platform')
         }
     }
 
     return (
         <div className="game-form">
-            <h1>{game ? "Update Game" : "New Game"}</h1>
             <form onSubmit={handleSubmit}>
-                <p>Title</p>
-                <input value={name} onChange={(e) => {setName(e.target.value)}}/>
-                <p>Genre</p>
-                <input value = {genre} onChange={(e) => {setGenre(e.target.value)}}/>
-                <p>Platform</p>
-                <input value = {platform} onChange={(e) => {setPlatform(e.target.value)}}/>
+                <input 
+                    value={name} 
+                    onFocus={(e) => game ? setName(e.target.value) : setName('')} 
+                    onChange={(e) => {setName(e.target.value)}}
+                />
+                <input 
+                    value={genre} 
+                    onFocus={(e) => game ? setGenre(e.target.value) : setGenre('')} 
+                    onChange={(e) => {setGenre(e.target.value)}}
+                />
+                <input 
+                    value={platform} 
+                    onFocus={(e) => game ? setPlatform(e.target.value) : setPlatform('')} 
+                    onChange={(e) => {setPlatform(e.target.value)}}
+                />
                 <button>{game ? "Update Game" : "Add Game"}</button>
             </form>
         </div>
