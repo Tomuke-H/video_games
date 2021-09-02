@@ -27,7 +27,7 @@ const App =() => {
 
     const deleteGame = async (id) => {
         try {
-            console.log(id)
+            setErrors(null)
             await axios.delete(`/games/${id}`)
             setGames(games.filter((i) => i.id !== id))
         }catch (err){

@@ -13,6 +13,7 @@
     Game.create(
         name: Faker::Game.title,
         genre: Faker::Game.genre,
-        platform: Faker::Game.platform
+        platform: Faker::Game.platform,
+        sales: rand(3000)
     )
  end
