@@ -140,9 +140,11 @@ body {
     height: 203px;
     width: 300px;
     border: solid 2px #4E4E50;
+    transition: 2s;
     animation-name: fadein;
     animation-duration: 1s;
 }
+
 
 @keyframes fadein {
     from {

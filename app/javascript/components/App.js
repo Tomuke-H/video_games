@@ -6,8 +6,8 @@ import Error from './Error';
 
 const App =() => {
     const [games, setGames] = useState([])
-    const [showGames, setShowGames] = useState(true)
-    const [showForm, setShowForm] = useState(true)
+    const [showGames, setShowGames] = useState(false)
+    const [showForm, setShowForm] = useState(false)
     const [errors, setErrors] = useState(null)
 
     useEffect(() => {
@@ -67,7 +67,10 @@ const App =() => {
                     {showGames && <Games errors={errors} games={games} deleteGame={deleteGame} updateGame={updateGame}/>}
                 </div>
                 <div className="main__column">
-                    <button className="main__button" onClick={() => (setShowForm(!showForm))}>{showForm ? "Hide" : "Add New Game"}</button>
+                    <button 
+                        className="main__button" 
+                        onClick={() => (setShowForm(!showForm))}>{showForm ? "Hide" : "Add New Game"}
+                    </button>
                     {showForm && <GameForm errors={errors} createGame={createGame}/>}
                     {errors && <Error errors={errors}/>}
                 </div>
